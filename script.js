@@ -4,7 +4,7 @@ console.log("sanity check");
 const searchForm = document.querySelector('#search-form');
 const searchInput = document.querySelector('#search-input');
 const movieArea = document.querySelector("#movie-grid");
-const showMeMoreBtn = document.querySelector("#show-me-more-btn");
+const showMeMoreBtn = document.querySelector("#load-more-movies-btn");
 const movieCard = document.querySelector("#movie-card")
 const clearBtn = document.querySelector("#clear-search")
 const pageSize = 9;
