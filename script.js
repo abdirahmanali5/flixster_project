@@ -6,6 +6,7 @@ const searchInput = document.querySelector('#search-input');
 const movieArea = document.querySelector("#movie-grid");
 const showMeMoreBtn = document.querySelector("#show-me-more-btn");
 const movieCard = document.querySelector("#movie-card")
+const clearBtn = document.querySelector("#clear-search")
 const pageSize = 9;
 
 const movieSearchUrl = "https://api.themoviedb.org/3/search/movie"
@@ -102,14 +103,14 @@ function handleShowMeMoreClick(event) {
     event.preventDefault();
     currentApiPage++;
 
-    displayMovie(results);
+  //  displayMovie(results);
     if(searchInput.value == '') {
-       getMovie();
+       getResults(event);
 
     }   
      else {
         currentApiPage++
-        getResults(searchInput.value);
+        getMovie(searchInput.value);
     }
   
    // console.log(currentApiPage);
@@ -128,9 +129,11 @@ async function handleFormSubmit(eventz) {
 function Clear(r){
 if(searchInput.value = ""){
    searchInput.value = '';
-   movieCard.innerHTML = "";
-   getResults(searchInput);
-
+  // movieCard.innerHTML = "";
+   getResults(r);
+}
+else{
+    getResults(r);
 }
 
 }
@@ -141,6 +144,9 @@ searchForm.addEventListener('submit', (event) => {
 
 showMeMoreBtn.addEventListener('click',(event) => {
     handleShowMeMoreClick(event); 
+})
+clearBtn.addEventListener('click',(event) => {
+    Clear(event); 
 })
 
 
