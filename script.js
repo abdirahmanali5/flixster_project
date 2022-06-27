@@ -94,8 +94,7 @@ function displayMovie(movieDb) {
         <h3 class="movie-votes">Rating: ${Rated}</h3>
         <h3 class="movie-title">${Title}</h3>
          
-        </div>
-    `
+        </div>    `
 }
 
 
@@ -122,10 +121,9 @@ async function handleFormSubmit(eventz) {
     console.log(currentSearchTerm)
     getMovie(currentSearchTerm);
     searchInput.value = '';
-    currentApiPage++;
-    
-   
+    currentApiPage++; 
 }
+
 function Clear(r){
 if(searchInput.value = ""){
    searchInput.value = '';
@@ -154,6 +152,7 @@ window.addEventListener('load',(event) => {
     getResults(event);
     
 } )
+
 
 
 
